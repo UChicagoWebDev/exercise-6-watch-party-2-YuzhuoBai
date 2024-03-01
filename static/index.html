@@ -73,7 +73,7 @@
         <button class="exit logout">Log out</button>
       </div>
     </div>
-  </div> 
+  </div>
 </div>
 
 <div class="login"> <!-- TODO: Show me only on "/login" -->
@@ -117,62 +117,43 @@
           Chatting in <input>
           <button>Update</button>
         </h3>
+        <div class="invite">
+          Invite users to this chat at:
+          <a href="/rooms/{{ room_id }}" id="invite-link">/rooms/{{ room_id }}</a>
+        </div>
       </div>
-      Invite users to this chat at:
-      <a>/rooms/{{ room_id }}</a>
-    </div>
-    <div class="loginHeader">
-      <div class="loggedIn">
-        <a class="welcomeBack">
-          <span class="username">{{ Username }}</span>
-          <span class="material-symbols-outlined md-18">person</span></a>
-        </a>
+      <div class="loginHeader">
+        <div class="loggedIn">
+          <a class="welcomeBack">
+            <span class="username">{{ Username }}</span>
+            <span class="material-symbols-outlined md-18">person</span></a>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="clip">
-    <div class="container">
-      <div class="chat">
-        <div class="comment_box">
-          <label for="comment">What do you have to say?</label>
-          <textarea name="comment"></textarea>
-          <button type="submit" value="Post">Post</button>
+    <div class="clip">
+      <div class="container">
+        <div class="chat">
+          <div class="comment_box">
+            <label for="comment">What do you have to say?</label>
+            <textarea name="comment"></textarea>
+            <button type="submit" value="Post">Post</button>
+          </div>
+          <div class="messages"> <!-- TODO: Replace with the content returned by the API -->
+            <message>
+              <author></author>
+              <content></content>
+            </message>
+          </div>
         </div>
-        <div class="messages"> <!-- TODO: Replace with the content returned by the API -->
-          <message>
-            <author>Mr Chatterworth</author>
-            <content>Good evening! And how is everyone feeling?</content>
-          </message>
-          <message>
-            <author>big chats</author>
-            <content>gr8 lol</content>
-          </message>
-          <message>
-            <author>Mr Chatterworth</author>
-            <content>Splendid!</content>
-          </message>
-          <message>
-            <author>Chatty Cat</author>
-            <content>
-              Meow meow meow meow meow meow meow meow meow meow meow 
-              meow meow meow meow meow meow meow meow meow meow meow 
-              meow meow meow meow meow meow meow meow meow meow meow 
-            </content>
-          </message>
-          <message>
-            <author>Mr Chatterworth</author>
-            <content>Indeed, M. Cat. Indeed. 🧐</content>
-          </message>
+        <div class="noMessages">
+          <h2>Oops, we can't find that room!</h2>
+          <p><a>Let's go home and try again.</a></p>
         </div>
-      </div>
-      <div class="noMessages">
-        <h2>Oops, we can't find that room!</h2>
-        <p><a>Let's go home and try again.</a></p>
-      </div>
-    </div> <!-- end .container -->
-  </div> <!-- end .clip -->
-</div> <!-- end .room -->
-<script src="/static/script.js"> </script>
+      </div> <!-- end .container -->
+    </div> <!-- end .clip -->
+  </div> <!-- end .room -->
+  <script src="/static/script.js"> </script>
 </body>
 </html>
